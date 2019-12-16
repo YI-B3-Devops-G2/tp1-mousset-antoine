@@ -7,12 +7,16 @@
 # you're doing.
 Vagrant.configure("2") do |config|
   config.vm.box = "hashicorp/bionic64"
-  config.vm.box_version = "1.1.0"
+  config.vm.box_version = "1.0.282"
   config.vm.box = "nghiaht/nodejs"
   config.vm.box_url = "https://vagrantcloud.com/hashicorp/bionic64"
   config.vm.box = "hashicorp/bionic64"
     config.vm.provision :shell, path: "bootstrap.sh"
-    config.vm.network :forwarded_port, guest: 80, host: 4567
+config.vm.network "forwarded_port", guest: 80, host: 8080, host_ip: "127.0.0.1"
+
+config.vm.network "forwarded_port", guest: 22, host: 2220, host_ip: "127.0.0.1"
+
+config.vm.network "forwarded_port", guest: 443, host: 4343, host_ip: "127.0.0.1"
   # The most common configuration options are documented and commented below.
   # For a complete reference, please see the online documentation at
   # https://docs.vagrantup.com.
