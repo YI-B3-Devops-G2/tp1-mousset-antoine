@@ -11,5 +11,5 @@ sudo systemctl start nginx
      <body>
      B3 Devops - TP 1
      </body>
-     </html>" > index.nginx-debian.html
+     </html>" > index.html
      sudo systemctl restart nginx
